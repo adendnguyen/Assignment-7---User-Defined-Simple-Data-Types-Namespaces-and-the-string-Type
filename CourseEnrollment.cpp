@@ -74,7 +74,10 @@ int main()
         cout << "After fixing the typo " << email << endl;
         
         //removes trailing punctuaction
+        email.insert(email.length(), "!!!");
+        cout << "Before erasing trailing punctuation: " << email << endl;
         email.erase(email.find(".edu") + 4);
+        cout << "After erasing trailing punctuation: " << email << endl;
 
         string lastName2 = "Smith";
         cout << "Names in alphabetical Order:" << endl;
@@ -107,7 +110,6 @@ int main()
     // TODO: Advance currentCourse by one using static_cast (check that it is not already ART first).
     if(currentCourse != ART)
     {
-        currentCourse = MATH;
         currentCourse = static_cast<courseType>(currentCourse + 1);
         printCourse(currentCourse);
     }
@@ -149,7 +151,7 @@ int main()
     return 0;
 
     /*TEST RUN #1
-        Enter first name: Aden
+        Enter first name: Aden 
         Enter last name: Nguyen
         Your fullname is: Aden Nguyen
         There are 11 characters in your name
@@ -159,13 +161,15 @@ int main()
         Enter email username (e.g. jsmith): anguyen
         Email with typo: anguyen@sanjac.edu
         After fixing the typo anguyen@SanJac.edu
+        Before erasing trailing punctuation: anguyen@SanJac.edu!!!
+        After erasing trailing punctuation: anguyen@SanJac.edu
         Names in alphabetical Order:
         Nguyen
         Smith
         Enter course (english/math/history/cpp/biology/art): cpp
         You selected: C++ Programming
 
-        U.S. History
+        General Biology
         English Composition
         College Algebra
         U.S. History
@@ -176,8 +180,8 @@ int main()
         C++ Programming
         comes later in the day 
 
-        Enter credit hours: 20
-        Total Tuition is: $3000
+        Enter credit hours: 15
+        Total Tuition is: $2250
 
         --- Enrollment Summary ---
         Full Name: Aden Nguyen
@@ -185,9 +189,9 @@ int main()
         Course: C++ Programming
 
         Student ID: 10045
-        Credits: 20.00
-        Tuition: $3000.00
-        NameSpace Demo: C++ Programming    
+        Credits: 15.00
+        Tuition: $2250.00
+        NameSpace Demo: C++ Programming
     */
 
     /*TEST RUN #2
@@ -201,6 +205,8 @@ int main()
         Enter email username (e.g. jsmith): jdoe
         Email with typo: jdoe@sanjac.edu
         After fixing the typo jdoe@SanJac.edu
+        Before erasing trailing punctuation: jdoe@SanJac.edu!!!
+        After erasing trailing punctuation: jdoe@SanJac.edu
         Names in alphabetical Order:
         Doe
         Smith
